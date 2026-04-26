@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact the Virtual University Events Guide team with questions, event submissions, or feedback.">
+  <title>Contact | Virtual University Events Guide</title>
+
+  <!-- Google Fonts: Arabic and English friendly typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Virtual University Events Guide home">
+          <span class="brand-mark" aria-hidden="true">VU</span>
+          <span class="brand-text">
+            <span class="brand-title" data-i18n="brand.title">Virtual University</span>
+            <span class="brand-subtitle" data-i18n="brand.subtitle">Events Guide</span>
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html" data-i18n="nav.events">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="event.html" data-i18n="nav.event">Event Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contact.html" data-i18n="nav.contact">Contact</a>
+            </li>
+          </ul>
+          <div class="nav-actions d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
+            <button class="btn btn-sm btn-outline-primary language-toggle" type="button" data-language-toggle aria-label="Switch language">AR</button>
+            <button class="btn btn-sm btn-outline-primary theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" title="Switch theme">
+              <span class="theme-toggle-icon" data-theme-toggle-icon aria-hidden="true">🌙</span>
+              <span class="theme-toggle-label" data-theme-toggle-label>Dark</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="site-main">
+    <section class="contact-hero section-padding">
+      <div class="container">
+        <nav class="page-trail" aria-label="Page breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Contact</span>
+        </nav>
+
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <span class="section-kicker" data-i18n="contact.kicker">Contact & Event Support</span>
+            <h1 class="page-title contact-title" data-i18n="contact.title">Let’s help your campus event reach the right audience.</h1>
+            <p class="page-lead" data-i18n="contact.lead">Ask a question, send feedback, or request help publishing a university event. Our student-life team reviews messages and routes them to the right organizer.</p>
+            <div class="contact-hero-actions d-flex flex-wrap gap-3 mt-4">
+              <a class="btn btn-primary btn-lg" href="#contactForm" data-i18n="contact.ctaPrimary">Send a Message</a>
+              <a class="btn btn-outline-primary btn-lg" href="events.html" data-i18n="contact.ctaSecondary">Browse Events</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="contact-spotlight-card">
+              <img src="assets/img/contact-support.svg" alt="University support desk illustration" class="contact-spotlight-img" width="900" height="675" decoding="async" fetchpriority="high">
+              <div class="contact-spotlight-body">
+                <span class="badge rounded-pill text-bg-light">24h response target</span>
+                <h2 data-i18n="contact.spotlightTitle">Campus events support desk</h2>
+                <p data-i18n="contact.spotlightText">For event submissions, partnership requests, accessibility questions, and platform feedback.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding contact-section pt-0">
+      <div class="container">
+        <div class="row g-4 g-xl-5">
+          <div class="col-lg-7">
+            <div class="contact-form-card">
+              <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-start mb-4">
+                <div>
+                  <span class="section-kicker" data-i18n="contact.formKicker">Message Form</span>
+                  <h2 class="section-title mb-2" data-i18n="contact.formTitle">Tell us how we can help</h2>
+                  <p class="section-text mb-0" data-i18n="contact.formText">All fields are required so we can understand your request and reply accurately.</p>
+                </div>
+                <span class="contact-form-badge" data-i18n="contact.requiredBadge">Required fields</span>
+              </div>
+
+              <div class="alert alert-success d-none" role="alert" aria-live="polite" data-contact-alert="success">
+                <strong data-i18n="contact.successTitle">Message ready!</strong>
+                <span data-i18n="contact.successText"> Your message passed validation. This front-end demo does not send data to a server.</span>
+              </div>
+
+              <div class="alert alert-danger d-none" role="alert" aria-live="polite" data-contact-alert="error">
+                <strong data-i18n="contact.errorTitle">Please check the form.</strong>
+                <span data-i18n="contact.errorText"> Complete all fields and enter a valid email address.</span>
+              </div>
+
+              <form id="contactForm" class="needs-validation contact-form" novalidate data-contact-form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="contactName" class="form-label" data-i18n="contact.nameLabel">Name</label>
+                    <input type="text" class="form-control form-control-lg" id="contactName" name="name" placeholder="e.g. Sara Ahmed" required data-contact-field="name">
+                    <div class="invalid-feedback" data-i18n="contact.nameError">Please enter your name.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contactEmail" class="form-label" data-i18n="contact.emailLabel">Email</label>
+                    <input type="email" class="form-control form-control-lg" id="contactEmail" name="email" placeholder="name@university.edu" required data-contact-field="email">
+                    <div class="invalid-feedback" data-i18n="contact.emailError">Please enter a valid email address.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contactMessage" class="form-label" data-i18n="contact.messageLabel">Message</label>
+                    <textarea class="form-control form-control-lg" id="contactMessage" name="message" rows="6" placeholder="Tell us about your question, event, or feedback..." required data-contact-field="message"></textarea>
+                    <div class="invalid-feedback" data-i18n="contact.messageError">Please write a message.</div>
+                  </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 mt-4">
+                  <p class="form-note mb-0" data-i18n="contact.formNote">We only validate this demo in the browser; no personal data is submitted.</p>
+                  <button class="btn btn-primary btn-lg contact-submit-btn" type="submit" data-i18n="contact.submitButton">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <aside class="contact-info-panel" aria-labelledby="contactInfoTitle">
+              <span class="section-kicker" data-i18n="contact.infoKicker">Contact Info</span>
+              <h2 id="contactInfoTitle" class="section-title" data-i18n="contact.infoTitle">Reach the events team</h2>
+              <p class="section-text" data-i18n="contact.infoText">Use these channels for quick questions, official coordination, and social updates.</p>
+
+              <div class="contact-info-list">
+                <a class="contact-info-item" href="mailto:events@virtualuniversity.edu">
+                  <span class="contact-info-icon" aria-hidden="true">@</span>
+                  <span>
+                    <strong data-i18n="contact.emailInfoTitle">Email</strong>
+                    <small>events@virtualuniversity.edu</small>
+                  </span>
+                </a>
+
+                <a class="contact-info-item" href="tel:+966555010222">
+                  <span class="contact-info-icon" aria-hidden="true">☎</span>
+                  <span>
+                    <strong data-i18n="contact.phoneInfoTitle">Phone</strong>
+                    <small>+966 55 501 0222</small>
+                  </span>
+                </a>
+
+                <div class="contact-info-item">
+                  <span class="contact-info-icon" aria-hidden="true">⌁</span>
+                  <span>
+                    <strong data-i18n="contact.hoursInfoTitle">Office Hours</strong>
+                    <small data-i18n="contact.hoursInfoText">Sunday–Thursday, 9:00 AM–5:00 PM</small>
+                  </span>
+                </div>
+              </div>
+
+              <div class="contact-social-card mt-4">
+                <h3 data-i18n="contact.socialTitle">Follow campus updates</h3>
+                <div class="social-links contact-social-links d-flex flex-wrap gap-2 mt-3" aria-label="Social media links">
+                  <a href="#" aria-label="Follow us on X">X</a>
+                  <a href="#" aria-label="Follow us on Instagram">Instagram</a>
+                  <a href="#" aria-label="Follow us on LinkedIn">LinkedIn</a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-5">
+          <a class="footer-brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Virtual University Events Guide home">
+            <span class="brand-mark brand-mark-sm" aria-hidden="true">VU</span>
+            <span>
+              <strong data-i18n="brand.title">Virtual University</strong>
+              <span data-i18n="brand.subtitle">Events Guide</span>
+            </span>
+          </a>
+          <p class="footer-text mt-3" data-i18n="footer.description">Discover academic, cultural, sports, and student-life events in one accessible campus guide.</p>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h2 class="footer-heading" data-i18n="footer.quickLinks">Quick Links</h2>
+          <ul class="footer-links list-unstyled">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="events.html" data-i18n="nav.events">Events</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-4">
+          <h2 class="footer-heading" data-i18n="footer.contactTitle">Contact</h2>
+          <ul class="footer-links list-unstyled">
+            <li><a href="mailto:events@virtualuniversity.edu">events@virtualuniversity.edu</a></li>
+            <li><a href="tel:+966555010222">+966 55 501 0222</a></li>
+          </ul>
+          <div class="social-links d-flex flex-wrap gap-2 mt-3" aria-label="Social media links">
+            <a href="#" aria-label="Follow us on X">X</a>
+            <a href="#" aria-label="Follow us on Instagram">Instagram</a>
+            <a href="#" aria-label="Follow us on LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+        <span data-i18n="footer.copyright">&copy; 2026 Virtual University Events Guide. All rights reserved.</span>
+        <span data-i18n="footer.tagline">Built for students, organizers, and campus communities.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+Passed 202/202 checks
+[PASS] index.html: header/main/footer
+[PASS] index.html: responsive viewport meta
+[PASS] index.html: Bootstrap CSS CDN
+[PASS] index.html: Bootstrap JS bundle
+[PASS] index.html: styles.css linked
+[PASS] index.html: main.js linked
+[PASS] index.html: Cairo/Tajawal fonts
+[PASS] index.html: language toggle
+[PASS] index.html: theme toggle
+[PASS] index.html: responsive navbar
+[PASS] events.html: header/main/footer
+[PASS] events.html: responsive viewport meta
+[PASS] events.html: Bootstrap CSS CDN
+[PASS] events.html: Bootstrap JS bundle
+[PASS] events.html: styles.css linked
+[PASS] events.html: main.js linked
+[PASS] events.html: Cairo/Tajawal fonts
+[PASS] events.html: language toggle
+[PASS] events.html: theme toggle
+[PASS] events.html: responsive navbar
+[PASS] event.html: header/main/footer
+[PASS] event.html: responsive viewport meta
+[PASS] event.html: Bootstrap CSS CDN
+[PASS] event.html: Bootstrap JS bundle
+[PASS] event.html: styles.css linked
+[PASS] event.html: main.js linked
+[PASS] event.html: Cairo/Tajawal fonts
+[PASS] event.html: language toggle
+[PASS] event.html: theme toggle
+[PASS] event.html: responsive navbar
+[PASS] about.html: header/main/footer
+[PASS] about.html: responsive viewport meta
+[PASS] about.html: Bootstrap CSS CDN
+[PASS] about.html: Bootstrap JS bundle
+[PASS] about.html: styles.css linked
+[PASS] about.html: main.js linked
+[PASS] about.html: Cairo/Tajawal fonts
+[PASS] about.html: language toggle
+[PASS] about.html: theme toggle
+[PASS] about.html: responsive navbar
+[PASS] contact.html: header/main/footer
+[PASS] contact.html: responsive viewport meta
+[PASS] contact.html: Bootstrap CSS CDN
+[PASS] contact.html: Bootstrap JS bundle
+[PASS] contact.html: styles.css linked
+[PASS] contact.html: main.js linked
+[PASS] contact.html: Cairo/Tajawal fonts
+[PASS] contact.html: language toggle
+[PASS] contact.html: theme toggle
+[PASS] contact.html: responsive navbar
+[PASS] index.html: href exists: assets/css/styles.css - /mnt/data/university-events-guide/assets/css/styles.css
+[PASS] index.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] index.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] index.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] index.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] index.html: href exists: about.html - /mnt/data/university-events-guide/about.html
+[PASS] index.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] index.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] index.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] index.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] index.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] index.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] index.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] index.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] index.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] index.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] index.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] index.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] index.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] index.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] index.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] index.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] index.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] index.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] index.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] index.html: href exists: about.html - /mnt/data/university-events-guide/about.html
+[PASS] index.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] index.html: script source exists: assets/js/main.js - /mnt/data/university-events-guide/assets/js/main.js
+[PASS] events.html: href exists: assets/css/styles.css - /mnt/data/university-events-guide/assets/css/styles.css
+[PASS] events.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] events.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] events.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] events.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] events.html: href exists: about.html - /mnt/data/university-events-guide/about.html
+[PASS] events.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] events.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] events.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] events.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] events.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] events.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] events.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] events.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] events.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] events.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] events.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] events.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] events.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] events.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] events.html: href exists: about.html - /mnt/data/university-events-guide/about.html
+[PASS] events.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] events.html: script source exists: assets/js/main.js - /mnt/data/university-events-guide/assets/js/main.js
+[PASS] events.html: img source exists: assets/img/event-ai-expo.svg - /mnt/data/university-events-guide/assets/img/event-ai-expo.svg
+[PASS] events.html: img source exists: assets/img/event-culture-night.svg - /mnt/data/university-events-guide/assets/img/event-culture-night.svg
+[PASS] events.html: img source exists: assets/img/event-fitness.svg - /mnt/data/university-events-guide/assets/img/event-fitness.svg
+[PASS] events.html: img source exists: assets/img/event-music.svg - /mnt/data/university-events-guide/assets/img/event-music.svg
+[PASS] events.html: img source exists: assets/img/event-career.svg - /mnt/data/university-events-guide/assets/img/event-career.svg
+[PASS] events.html: img source exists: assets/img/event-workshop.svg - /mnt/data/university-events-guide/assets/img/event-workshop.svg
+[PASS] events.html: img source exists: assets/img/event-volunteer.svg - /mnt/data/university-events-guide/assets/img/event-volunteer.svg
+[PASS] events.html: img source exists: assets/img/event-tech.svg - /mnt/data/university-events-guide/assets/img/event-tech.svg
+[PASS] events.html: img source exists: assets/img/event-webinar.svg - /mnt/data/university-events-guide/assets/img/event-webinar.svg
+[PASS] event.html: href exists: assets/css/styles.css - /mnt/data/university-events-guide/assets/css/styles.css
+[PASS] event.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] event.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] event.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] event.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] event.html: href exists: about.html - /mnt/data/university-events-guide/about.html
+[PASS] event.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] event.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] event.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] event.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] event.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] event.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] event.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] event.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] event.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] event.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] event.html: href exists: about.html - /mnt/data/university-events-guide/about.html
+[PASS] event.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] event.html: script source exists: assets/js/main.js - /mnt/data/university-events-guide/assets/js/main.js
+[PASS] event.html: img source exists: assets/img/event-ai-expo.svg - /mnt/data/university-events-guide/assets/img/event-ai-expo.svg
+[PASS] event.html: img source exists: assets/img/gallery-ai-demo.svg - /mnt/data/university-events-guide/assets/img/gallery-ai-demo.svg
+[PASS] event.html: img source exists: assets/img/gallery-research-talk.svg - /mnt/data/university-events-guide/assets/img/gallery-research-talk.svg
+[PASS] event.html: img source exists: assets/img/gallery-poster-session.svg - /mnt/data/university-events-guide/assets/img/gallery-poster-session.svg
+[PASS] event.html: img source exists: assets/img/gallery-networking.svg - /mnt/data/university-events-guide/assets/img/gallery-networking.svg
+[PASS] event.html: img source exists: assets/img/map-innovation-auditorium.svg - /mnt/data/university-events-guide/assets/img/map-innovation-auditorium.svg
+[PASS] event.html: img source exists: assets/img/event-tech.svg - /mnt/data/university-events-guide/assets/img/event-tech.svg
+[PASS] event.html: img source exists: assets/img/event-workshop.svg - /mnt/data/university-events-guide/assets/img/event-workshop.svg
+[PASS] event.html: img source exists: assets/img/event-webinar.svg - /mnt/data/university-events-guide/assets/img/event-webinar.svg
+[PASS] about.html: href exists: assets/css/styles.css - /mnt/data/university-events-guide/assets/css/styles.css
+[PASS] about.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] about.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] about.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] about.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] about.html: href exists: about.html - /mnt/data/university-events-guide/about.html
+[PASS] about.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] about.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] about.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] about.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] about.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] about.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] about.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] about.html: href exists: about.html - /mnt/data/university-events-guide/about.html
+[PASS] about.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] about.html: script source exists: assets/js/main.js - /mnt/data/university-events-guide/assets/js/main.js
+[PASS] about.html: img source exists: assets/img/team-lina.svg - /mnt/data/university-events-guide/assets/img/team-lina.svg
+[PASS] about.html: img source exists: assets/img/team-omar.svg - /mnt/data/university-events-guide/assets/img/team-omar.svg
+[PASS] about.html: img source exists: assets/img/team-maya.svg - /mnt/data/university-events-guide/assets/img/team-maya.svg
+[PASS] about.html: img source exists: assets/img/team-sami.svg - /mnt/data/university-events-guide/assets/img/team-sami.svg
+[PASS] contact.html: href exists: assets/css/styles.css - /mnt/data/university-events-guide/assets/css/styles.css
+[PASS] contact.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] contact.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] contact.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] contact.html: href exists: event.html - /mnt/data/university-events-guide/event.html
+[PASS] contact.html: href exists: about.html - /mnt/data/university-events-guide/about.html
+[PASS] contact.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] contact.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] contact.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] contact.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] contact.html: href exists: index.html - /mnt/data/university-events-guide/index.html
+[PASS] contact.html: href exists: events.html - /mnt/data/university-events-guide/events.html
+[PASS] contact.html: href exists: about.html - /mnt/data/university-events-guide/about.html
+[PASS] contact.html: href exists: contact.html - /mnt/data/university-events-guide/contact.html
+[PASS] contact.html: script source exists: assets/js/main.js - /mnt/data/university-events-guide/assets/js/main.js
+[PASS] contact.html: img source exists: assets/img/contact-support.svg - /mnt/data/university-events-guide/assets/img/contact-support.svg
+[PASS] events: category filter
+[PASS] events: date filter
+[PASS] events: location filter
+[PASS] events: reset filters button
+[PASS] events: no-results alert
+[PASS] events: event cards count - 9 cards
+[PASS] events: card filter attributes - []
+[PASS] events: event detail links
+[PASS] contact: form exists
+[PASS] contact: required fields
+[PASS] contact: success/error alerts
+[PASS] event detail: calendar/share actions
+[PASS] event detail: action feedback
+[PASS] event detail: map image
+[PASS] event detail: gallery images
+[PASS] event detail: booking modal
+[PASS] responsive: CSS media queries - 26 media queries
+[PASS] responsive: Bootstrap grid classes in pages
+[PASS] responsive: RTL support
+[PASS] responsive: reduced motion support
+[PASS] browser readiness: standards-based APIs
+[PASS] browser readiness: no module/bundler dependency
+[PASS] browser readiness: Bootstrap CDN used consistently
+[PASS] javascript: syntax check
+[PASS] javascript: slider enhancements
+[PASS] javascript: filtering logic
+[PASS] javascript: contact validation logic
+[PASS] javascript: alert helpers

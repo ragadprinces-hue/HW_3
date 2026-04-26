@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View university event details, schedule, location, gallery, and related events.">
+  <title>Event Details | Virtual University Events Guide</title>
+
+  <!-- Google Fonts: Arabic and English friendly typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="event">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Virtual University Events Guide home">
+          <span class="brand-mark" aria-hidden="true">VU</span>
+          <span class="brand-text">
+            <span class="brand-title" data-i18n="brand.title">Virtual University</span>
+            <span class="brand-subtitle" data-i18n="brand.subtitle">Events Guide</span>
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html" data-i18n="nav.events">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="event.html" data-i18n="nav.event">Event Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a>
+            </li>
+          </ul>
+          <div class="nav-actions d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
+            <button class="btn btn-sm btn-outline-primary language-toggle" type="button" data-language-toggle aria-label="Switch language">AR</button>
+            <button class="btn btn-sm btn-outline-primary theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" title="Switch theme">
+              <span class="theme-toggle-icon" data-theme-toggle-icon aria-hidden="true">🌙</span>
+              <span class="theme-toggle-label" data-theme-toggle-label>Dark</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="site-main">
+    <section class="event-detail-hero section-padding">
+      <div class="container">
+        <nav class="page-trail event-breadcrumb" aria-label="Event breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="events.html">Events</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">AI Research Expo</span>
+        </nav>
+
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <div class="section-kicker">Featured academic event</div>
+            <h1 class="page-title">AI Research Expo</h1>
+            <p class="page-lead">A university-wide showcase of student research, faculty innovation, and practical artificial intelligence projects designed for learning, networking, and discovery.</p>
+
+            <div class="event-detail-meta" aria-label="Event summary information">
+              <div class="event-detail-meta-item">
+                <span class="meta-icon" aria-hidden="true">📅</span>
+                <div>
+                  <strong>Date &amp; Time</strong>
+                  <span>May 12, 2026 · 10:00 AM - 2:30 PM</span>
+                </div>
+              </div>
+              <div class="event-detail-meta-item">
+                <span class="meta-icon" aria-hidden="true">📍</span>
+                <div>
+                  <strong>Location</strong>
+                  <span>Innovation Auditorium, Main Virtual Campus</span>
+                </div>
+              </div>
+              <div class="event-detail-meta-item">
+                <span class="meta-icon" aria-hidden="true">🏷️</span>
+                <div>
+                  <strong>Category</strong>
+                  <span>Academic · Technology · Research</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-action-row" aria-label="Event actions">
+              <button class="btn btn-primary btn-lg" type="button" data-event-action="calendar">Add to Calendar</button>
+              <button class="btn btn-outline-primary btn-lg" type="button" data-event-action="share">Share Event</button>
+              <button class="btn btn-warning btn-lg btn-booking" type="button" data-bs-toggle="modal" data-bs-target="#bookingModal">Book a Seat</button>
+            </div>
+            <div class="alert alert-success event-action-alert d-none" role="status" aria-live="polite" data-event-action-feedback></div>
+          </div>
+
+          <div class="col-lg-5">
+            <article class="event-spotlight-card">
+              <img src="assets/img/event-ai-expo.svg" alt="AI Research Expo illustration" class="event-spotlight-img" width="900" height="560" decoding="async" fetchpriority="high">
+              <div class="event-spotlight-content">
+                <span class="badge rounded-pill text-bg-primary">Registration open</span>
+                <h2>Seats are limited for live demos.</h2>
+                <p>Join early to reserve a demo walkthrough and meet participating student teams.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="event-detail-content section-padding pt-0">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <article class="detail-panel">
+              <h2>About this event</h2>
+              <p>The AI Research Expo brings together undergraduate and graduate students, instructors, and industry guests to present applied research projects. Attendees can explore poster sessions, interactive prototypes, and short talks focused on responsible AI, learning technologies, data visualization, and student-built tools.</p>
+              <p>The program is designed to be accessible for all students. You can join to learn about current research, discover collaboration opportunities, or simply get inspired by how technology is being used across academic disciplines.</p>
+
+              <div class="detail-highlights-grid" aria-label="Event highlights">
+                <div class="detail-highlight-card">
+                  <strong>18+</strong>
+                  <span>student demos</span>
+                </div>
+                <div class="detail-highlight-card">
+                  <strong>4</strong>
+                  <span>faculty talks</span>
+                </div>
+                <div class="detail-highlight-card">
+                  <strong>Live</strong>
+                  <span>Q&amp;A sessions</span>
+                </div>
+              </div>
+            </article>
+
+            <section class="detail-panel mt-4" aria-labelledby="galleryTitle">
+              <div class="section-heading-row">
+                <div>
+                  <div class="section-kicker">Gallery</div>
+                  <h2 id="galleryTitle">Event gallery</h2>
+                </div>
+                <span class="gallery-count">4 images</span>
+              </div>
+              <div class="event-gallery-grid">
+                <figure class="gallery-item gallery-item-large">
+                  <img src="assets/img/gallery-ai-demo.svg" alt="Students presenting AI demo screens" width="900" height="620" decoding="async" loading="lazy">
+                  <figcaption>Prototype demos</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                  <img src="assets/img/gallery-research-talk.svg" alt="Faculty research talk in auditorium" width="900" height="620" decoding="async" loading="lazy">
+                  <figcaption>Faculty talks</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                  <img src="assets/img/gallery-poster-session.svg" alt="Digital poster session boards" width="900" height="620" decoding="async" loading="lazy">
+                  <figcaption>Poster sessions</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                  <img src="assets/img/gallery-networking.svg" alt="Students networking at event tables" width="900" height="620" decoding="async" loading="lazy">
+                  <figcaption>Networking</figcaption>
+                </figure>
+              </div>
+            </section>
+          </div>
+
+          <aside class="col-lg-4">
+            <div class="detail-panel event-sidebar-card">
+              <h2>Event location</h2>
+              <img class="event-map-img" src="assets/img/map-innovation-auditorium.svg" alt="Static map showing Innovation Auditorium location" width="900" height="560" decoding="async" loading="lazy">
+              <div class="event-location-note">
+                <strong>Innovation Auditorium</strong>
+                <span>Main Virtual Campus · North Academic District</span>
+              </div>
+            </div>
+
+            <div class="detail-panel event-sidebar-card mt-4">
+              <h2>Schedule</h2>
+              <ol class="event-schedule-list">
+                <li><time datetime="2026-05-12T10:00">10:00 AM</time><span>Welcome and opening remarks</span></li>
+                <li><time datetime="2026-05-12T10:30">10:30 AM</time><span>Student research demos</span></li>
+                <li><time datetime="2026-05-12T12:00">12:00 PM</time><span>Faculty lightning talks</span></li>
+                <li><time datetime="2026-05-12T13:15">1:15 PM</time><span>Poster walk and networking</span></li>
+              </ol>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-events-section section-padding pt-0">
+      <div class="container">
+        <div class="section-heading-row mb-4">
+          <div>
+            <div class="section-kicker">Keep exploring</div>
+            <h2 class="section-title">Related events</h2>
+          </div>
+          <a class="btn btn-outline-primary" href="events.html">View all events</a>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="event-card event-list-card h-100 related-event-card">
+              <img class="event-card-img" src="assets/img/event-tech.svg" alt="Campus Tech Forum event artwork" width="900" height="560" decoding="async" loading="lazy">
+              <div class="event-card-body">
+                <div class="d-flex justify-content-between align-items-start gap-3">
+                  <span class="badge rounded-pill text-bg-primary">Technology</span>
+                  <span class="event-date">Jun 02</span>
+                </div>
+                <h2>Campus Tech Forum</h2>
+                <p>Discuss emerging digital tools, student innovation, and responsible technology practices.</p>
+                <a class="btn btn-primary stretched-link" href="event.html">View Details</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="event-card event-list-card h-100 related-event-card">
+              <img class="event-card-img" src="assets/img/event-workshop.svg" alt="UX Workshop event artwork" width="900" height="560" decoding="async" loading="lazy">
+              <div class="event-card-body">
+                <div class="d-flex justify-content-between align-items-start gap-3">
+                  <span class="badge rounded-pill text-bg-warning">Workshop</span>
+                  <span class="event-date">May 28</span>
+                </div>
+                <h2>UX Workshop Sprint</h2>
+                <p>Learn practical design methods for planning, prototyping, and testing student-facing products.</p>
+                <a class="btn btn-primary stretched-link" href="event.html">View Details</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="event-card event-list-card h-100 related-event-card">
+              <img class="event-card-img" src="assets/img/event-webinar.svg" alt="Webinar event artwork" width="900" height="560" decoding="async" loading="lazy">
+              <div class="event-card-body">
+                <div class="d-flex justify-content-between align-items-start gap-3">
+                  <span class="badge rounded-pill text-bg-secondary">Online</span>
+                  <span class="event-date">Jun 14</span>
+                </div>
+                <h2>Research Skills Webinar</h2>
+                <p>Build stronger digital research habits with library experts and academic mentors.</p>
+                <a class="btn btn-primary stretched-link" href="event.html">View Details</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal fade booking-modal" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="modal-kicker">Booking preview</span>
+            <h2 class="modal-title" id="bookingModalTitle">Book your seat</h2>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close booking modal"></button>
+        </div>
+        <form class="modal-body" data-booking-form aria-label="Event booking form" novalidate>
+          <div class="booking-modal-summary">
+            <span class="badge rounded-pill text-bg-primary">AI Research Expo</span>
+            <p>This is a front-end booking preview. It validates your entry but does not submit data to a server.</p>
+          </div>
+
+          <div class="alert d-none" role="status" aria-live="polite" data-booking-alert></div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="bookingName">Full name</label>
+              <input class="form-control" id="bookingName" type="text" data-booking-field="name" placeholder="e.g. Sara Ahmed" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="bookingEmail">Email address</label>
+              <input class="form-control" id="bookingEmail" type="email" data-booking-field="email" placeholder="student@virtualuniversity.edu" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="bookingSession">Preferred session</label>
+              <select class="form-select" id="bookingSession" data-booking-field="session" required>
+                <option value="">Choose a session</option>
+                <option value="demo">Student research demos</option>
+                <option value="talks">Faculty lightning talks</option>
+                <option value="networking">Poster walk and networking</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="bookingStudentId">Student ID</label>
+              <input class="form-control" id="bookingStudentId" type="text" data-booking-field="studentId" placeholder="Optional">
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="bookingNotes">Accessibility or attendance notes</label>
+              <textarea class="form-control" id="bookingNotes" rows="3" placeholder="Optional notes for the event team"></textarea>
+            </div>
+          </div>
+
+          <div class="modal-footer px-0 pb-0">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Confirm Booking Preview</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-5">
+          <a class="footer-brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Virtual University Events Guide home">
+            <span class="brand-mark brand-mark-sm" aria-hidden="true">VU</span>
+            <span>
+              <strong data-i18n="brand.title">Virtual University</strong>
+              <span data-i18n="brand.subtitle">Events Guide</span>
+            </span>
+          </a>
+          <p class="footer-text mt-3" data-i18n="footer.description">Discover academic, cultural, sports, and student-life events in one accessible campus guide.</p>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h2 class="footer-heading" data-i18n="footer.quickLinks">Quick Links</h2>
+          <ul class="footer-links list-unstyled">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="events.html" data-i18n="nav.events">Events</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-4">
+          <h2 class="footer-heading" data-i18n="footer.contactTitle">Contact</h2>
+          <ul class="footer-links list-unstyled">
+            <li><a href="mailto:events@virtualuniversity.edu">events@virtualuniversity.edu</a></li>
+            <li><a href="tel:+966555010222">+966 55 501 0222</a></li>
+          </ul>
+          <div class="social-links d-flex flex-wrap gap-2 mt-3" aria-label="Social media links">
+            <a href="#" aria-label="Follow us on X">X</a>
+            <a href="#" aria-label="Follow us on Instagram">Instagram</a>
+            <a href="#" aria-label="Follow us on LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+        <span data-i18n="footer.copyright">&copy; 2026 Virtual University Events Guide. All rights reserved.</span>
+        <span data-i18n="footer.tagline">Built for students, organizers, and campus communities.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
