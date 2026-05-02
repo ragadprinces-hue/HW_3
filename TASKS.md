@@ -1,4 +1,5 @@
 # Project Task Checklist
+
 ## Virtual University Events Guide Website
 
 ---
@@ -34,17 +35,20 @@
 ## 3. Global Layout
 
 ### Navbar
+
 - [x] Create responsive Navbar (Bootstrap)
 - [x] Add logo and title
 - [x] Add navigation links
 - [x] Ensure mobile responsiveness
 
 ### Footer
+
 - [x] Create footer
 - [x] Add contact info
 - [x] Add social links
 
 ### Structure
+
 - [x] Apply Header / Main / Footer to all pages
 
 ---
@@ -52,20 +56,24 @@
 ## 4. Home Page (index.html)
 
 ### Featured Events
+
 - [x] Create slider or horizontal cards
 - [x] Add sample events
 - [x] Implement slider with JavaScript
 
 ### Categories
+
 - [x] Add category buttons/badges
 - [x] Style categories section
 
 ### Latest Events
+
 - [x] Create grid layout (Bootstrap)
 - [x] Build reusable event card
 - [x] Add sample events
 
 ### Responsiveness
+
 - [x] Test on mobile
 - [x] Test on tablet
 - [x] Test on desktop
@@ -75,6 +83,7 @@
 ## 5. Events Page (events.html)
 
 ### Event Listing
+
 - [x] Create event cards layout
 - [x] Add:
   - [x] Image
@@ -86,15 +95,18 @@
   - [x] View Details button
 
 ### Filtering UI
+
 - [x] Add category filter
 - [x] Add date filter
 - [x] Add location filter
 
 ### Filtering Logic
+
 - [x] Implement filtering (JavaScript)
 - [x] Update UI dynamically
 
 ### Navigation
+
 - [x] Link to event.html from cards
 
 ---
@@ -102,6 +114,7 @@
 ## 6. Event Details Page (event.html)
 
 ### Content
+
 - [x] Add title
 - [x] Add date & time
 - [x] Add location
@@ -109,13 +122,16 @@
 - [x] Add full description
 
 ### Gallery
+
 - [x] Add image gallery
 
 ### Actions
+
 - [x] Add "Add to Calendar" button
 - [x] Add "Share" button
 
 ### Related Events
+
 - [x] Add related events section
 
 ---
@@ -135,6 +151,7 @@
 ## 8. Contact Page (contact.html)
 
 ### Form
+
 - [x] Create form
 - [x] Add fields:
   - [x] Name
@@ -142,14 +159,17 @@
   - [x] Message
 
 ### Validation
+
 - [x] Validate required fields
 - [x] Validate email format
 
 ### Feedback
+
 - [x] Show success alert
 - [x] Show error alert
 
 ### Contact Info
+
 - [x] Add email
 - [x] Add social links
 
@@ -196,16 +216,19 @@
 ## 13. Testing
 
 ### Functional
+
 - [x] Test all links
 - [x] Test filtering
 - [x] Test form validation
 
 ### Responsive
+
 - [x] Mobile
 - [x] Tablet
 - [x] Desktop
 
 ### Browser Testing
+
 - [x] Chrome compatibility review
 - [x] Firefox compatibility review
 - [x] Edge compatibility review

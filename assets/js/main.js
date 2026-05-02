@@ -449,6 +449,14 @@ function applyLanguage(language) {
   translateTextNodes(language);
   translateAttributes(language);
 
+  if (window.refreshEventsListingLanguage) {
+    window.refreshEventsListingLanguage();
+  }
+
+  if (window.refreshEventDetailsLanguage) {
+    window.refreshEventDetailsLanguage();
+  }
+
   const languageToggle = document.querySelector('[data-language-toggle]');
   if (languageToggle) {
     languageToggle.textContent = language === 'ar' ? 'EN' : 'AR';
@@ -492,12 +500,128 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguageSwitcher();
   initThemeToggle();
   initScrollToTop();
+  initFeaturedSliderDynamic();
   initFeaturedSlider();
   initEventsFiltering();
+  initEventDetailsRendering();
   initEventDetailActions();
   initBookingModal();
   initContactFormValidation();
+  initHomeEvents();
 });
+
+function initEventDetailsRendering() {
+  const title = document.getElementById('eventTitle');
+  if (!title) return;
+
+  const events = getProjectEvents();
+  if (events.length === 0) return;
+
+  const render = () => {
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = params.get('id');
+    const event = events.find((item) => item.id === requestedId) || events[0];
+    const text = getLocalizedEventText(event);
+
+    const breadcrumb = document.getElementById('eventBreadcrumbTitle');
+    if (breadcrumb) breadcrumb.textContent = text.title;
+    title.textContent = text.title;
+
+    const lead = document.getElementById('eventLead');
+    if (lead) lead.textContent = text.description;
+
+    const dateTime = document.getElementById('eventDateTime');
+    if (dateTime) dateTime.textContent = `${formatEventDateLong(event.date)} · ${event.time}`;
+
+    const locationLabel = getMetaLabel('locations', event.location);
+    const categoryLabel = getMetaLabel('categories', event.category);
+
+    const location = document.getElementById('eventLocation');
+    if (location) location.textContent = locationLabel;
+
+    const category = document.getElementById('eventCategory');
+    if (category) category.textContent = categoryLabel;
+
+    const heroImage = document.getElementById('eventHeroImage');
+    if (heroImage) {
+      heroImage.src = event.image;
+      heroImage.alt = text.title;
+    }
+
+    const about = document.getElementById('eventAboutText');
+    if (about) about.textContent = text.full || text.description;
+
+    const aboutExtra = document.getElementById('eventAboutTextExtra');
+    if (aboutExtra) {
+      aboutExtra.classList.add('d-none');
+    }
+
+    const sidebarLocationTitle = document.getElementById('eventSidebarLocationTitle');
+    if (sidebarLocationTitle) sidebarLocationTitle.textContent = locationLabel;
+
+    const bookingBadge = document.getElementById('bookingEventBadge');
+    if (bookingBadge) bookingBadge.textContent = text.title;
+
+    const relatedGrid = document.querySelector('[data-related-events-grid]');
+    if (relatedGrid) {
+      const related = events.filter((item) => item.id !== event.id).slice(0, 3);
+      relatedGrid.innerHTML = related.map((item) => {
+        const relatedText = getLocalizedEventText(item);
+        const relatedCategory = getMetaLabel('categories', item.category);
+        return `
+          <div class="col-md-6 col-xl-4">
+            <article class="event-card event-list-card h-100 related-event-card">
+              <img class="event-card-img" src="${escapeHtml(item.image)}" alt="${escapeHtml(relatedText.title)}" width="900" height="560" decoding="async" loading="lazy">
+              <div class="event-card-body">
+                <div class="d-flex justify-content-between align-items-start gap-3">
+                  <span class="badge rounded-pill ${getCategoryBadgeClass(item.category)}">${escapeHtml(relatedCategory)}</span>
+                  <span class="event-date">${escapeHtml(formatEventDateShort(item.date))}</span>
+                </div>
+                <h2>${escapeHtml(relatedText.title)}</h2>
+                <p>${escapeHtml(relatedText.description)}</p>
+                <a class="btn btn-primary stretched-link" href="event.html?id=${encodeURIComponent(item.id)}">${escapeHtml(getViewDetailsLabel())}</a>
+              </div>
+            </article>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ✅ GALLERY FIX STARTS HERE
+    const galleryGrid = document.querySelector('[data-event-gallery]');
+    const galleryCount = document.querySelector('[data-gallery-count]');
+
+    if (galleryGrid && Array.isArray(event.gallery)) {
+      const captions = [
+        'Prototype demos',
+        'Faculty talks',
+        'Poster sessions',
+        'Networking',
+      ];
+
+      galleryGrid.innerHTML = event.gallery.slice(0, 4).map((image, index) => `
+      <figure class="gallery-item ${index === 0 ? 'gallery-item-large' : ''}">
+        <img 
+          src="${escapeHtml(image)}" 
+          alt="${escapeHtml(text.title)} gallery image ${index + 1}" 
+          width="900" 
+          height="620" 
+          decoding="async" 
+          loading="lazy">
+        <figcaption>${escapeHtml(captions[index] || `Gallery image ${index + 1}`)}</figcaption>
+      </figure>
+    `).join('');
+
+      if (galleryCount) {
+        galleryCount.textContent = `${Math.min(event.gallery.length, 4)} images`;
+      }
+    }
+    // ✅ GALLERY FIX ENDS HERE
+  };
+
+  window.refreshEventDetailsLanguage = render;
+  render();
+}
 
 // Keeps the responsive menu usable with Bootstrap JS and with the local CSS fallback.
 function initResponsiveNavbar() {
@@ -544,6 +668,155 @@ function escapeHtml(value) {
   const element = document.createElement('span');
   element.textContent = String(value);
   return element.innerHTML;
+}
+
+function getProjectEvents() {
+  if (Array.isArray(window.VUEG_EVENTS) && window.VUEG_EVENTS.length > 0) {
+    return window.VUEG_EVENTS;
+  }
+
+  if (typeof EVENTS !== 'undefined' && Array.isArray(EVENTS) && EVENTS.length > 0) {
+    return EVENTS;
+  }
+
+  return [];
+}
+
+function getProjectEventMeta() {
+  if (window.VUEG_EVENT_META && typeof window.VUEG_EVENT_META === 'object') {
+    return window.VUEG_EVENT_META;
+  }
+  return { categories: {}, locations: {} };
+}
+
+function getLocalizedEventText(event) {
+  if (!event) {
+    return { title: '', description: '', full: '' };
+  }
+
+  const localized = currentLanguage === 'ar' ? event.ar : event.en;
+  return localized || event.en || event.ar || { title: '', description: '', full: '' };
+}
+
+function getMetaLabel(group, key) {
+  const meta = getProjectEventMeta();
+  const entry = meta?.[group]?.[key];
+  if (!entry) return key;
+  if (currentLanguage === 'ar') return entry.ar || entry.en || key;
+  return entry.en || entry.ar || key;
+}
+
+function formatEventDateShort(dateString) {
+  const locale = currentLanguage === 'ar' ? 'ar' : 'en-US';
+  const date = new Date(`${dateString}T00:00:00`);
+
+  try {
+    return new Intl.DateTimeFormat(locale, { month: 'short', day: '2-digit' }).format(date);
+  } catch (error) {
+    return dateString;
+  }
+}
+
+function formatEventDateLong(dateString) {
+  const locale = currentLanguage === 'ar' ? 'ar' : 'en-US';
+  const date = new Date(`${dateString}T00:00:00`);
+
+  try {
+    return new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric' }).format(date);
+  } catch (error) {
+    return dateString;
+  }
+}
+
+function getCategoryBadgeClass(category) {
+  const map = {
+    tech: 'text-bg-secondary',
+    culture: 'text-bg-success',
+    sports: 'text-bg-info',
+    music: 'text-bg-danger',
+    community: 'text-bg-primary',
+    career: 'text-bg-warning',
+  };
+  return map[category] || 'text-bg-primary';
+}
+
+function getViewDetailsLabel() {
+  return currentLanguage === 'ar' ? 'عرض التفاصيل' : 'View Details';
+}
+
+function renderEventsGridFromDataset(eventsGrid, events) {
+  if (!eventsGrid) return;
+
+  eventsGrid.innerHTML = events.map((event) => {
+    const text = getLocalizedEventText(event);
+    const categoryLabel = getMetaLabel('categories', event.category);
+    const locationLabel = getMetaLabel('locations', event.location);
+    const shortDate = formatEventDateShort(event.date);
+    const longDate = formatEventDateLong(event.date);
+
+    return `
+      <div class="col-md-6 col-xl-4" data-event-card data-event-id="${escapeHtml(event.id)}" data-category="${escapeHtml(event.category)}" data-date="${escapeHtml(event.date)}" data-location="${escapeHtml(event.location)}">
+        <article class="event-card event-list-card h-100">
+          <img class="event-card-img" src="${escapeHtml(event.image)}" alt="${escapeHtml(text.title)}" width="900" height="560" decoding="async" loading="lazy">
+          <div class="event-card-body">
+            <div class="d-flex justify-content-between align-items-start gap-3">
+              <span class="badge rounded-pill ${getCategoryBadgeClass(event.category)}">${escapeHtml(categoryLabel)}</span>
+              <span class="event-date">${escapeHtml(shortDate)}</span>
+            </div>
+            <h2>${escapeHtml(text.title)}</h2>
+            <p>${escapeHtml(text.description)}</p>
+            <div class="event-meta-list compact">
+              <span>${escapeHtml(longDate)}</span>
+              <span>${escapeHtml(locationLabel)}</span>
+            </div>
+            <a class="btn btn-primary stretched-link" href="event.html?id=${encodeURIComponent(event.id)}">${escapeHtml(getViewDetailsLabel())}</a>
+          </div>
+        </article>
+      </div>
+    `;
+  }).join('');
+}
+
+function updateEventCardFromDataset(card, event) {
+  if (!card || !event) return;
+  const text = getLocalizedEventText(event);
+
+  card.dataset.category = event.category;
+  card.dataset.date = event.date;
+  card.dataset.location = event.location;
+
+  const badge = card.querySelector('.badge');
+  if (badge) {
+    badge.className = `badge rounded-pill ${getCategoryBadgeClass(event.category)}`;
+    badge.textContent = getMetaLabel('categories', event.category);
+  }
+
+  const dateEl = card.querySelector('.event-date');
+  if (dateEl) dateEl.textContent = formatEventDateShort(event.date);
+
+  const title = card.querySelector('h2');
+  if (title) title.textContent = text.title;
+
+  const description = card.querySelector('p');
+  if (description) description.textContent = text.description;
+
+  const metaSpans = card.querySelectorAll('.event-meta-list span');
+  if (metaSpans.length >= 2) {
+    metaSpans[0].textContent = formatEventDateLong(event.date);
+    metaSpans[1].textContent = getMetaLabel('locations', event.location);
+  }
+
+  const img = card.querySelector('img');
+  if (img) {
+    img.src = event.image;
+    img.alt = text.title;
+  }
+
+  const link = card.querySelector('a.btn');
+  if (link) {
+    link.href = `event.html?id=${encodeURIComponent(event.id)}`;
+    link.textContent = getViewDetailsLabel();
+  }
 }
 
 // Central UI message dictionary for dynamic labels, alerts, and status text.
@@ -676,11 +949,14 @@ function updateThemeToggle(theme) {
   const labelKey = isDark ? 'themeLightLabel' : 'themeDarkLabel';
   const ariaKey = isDark ? 'themeSwitchToLight' : 'themeSwitchToDark';
 
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+
   if (themeIcon) themeIcon.textContent = isDark ? '☀️' : '🌙';
   if (themeLabel) themeLabel.textContent = getUiMessage(labelKey);
   themeToggle.setAttribute('aria-label', getUiMessage(ariaKey));
   themeToggle.setAttribute('title', getUiMessage(ariaKey));
   themeToggle.setAttribute('aria-pressed', String(isDark));
+  updateLogoByTheme(currentTheme);
 }
 
 function applyTheme(theme) {
@@ -963,9 +1239,6 @@ function initFeaturedSlider() {
 }
 // Events listing filter system updates cards, result counts, filter chips, and saved preferences.
 function initEventsFiltering() {
-  const cards = Array.from(document.querySelectorAll('[data-event-card]'));
-  if (cards.length === 0) return;
-
   const categoryFilter = document.querySelector('[data-event-filter="category"]');
   const dateFilter = document.querySelector('[data-event-filter="date"]');
   const locationFilter = document.querySelector('[data-event-filter="location"]');
@@ -975,6 +1248,34 @@ function initEventsFiltering() {
   const quickCategoryButtons = Array.from(document.querySelectorAll('[data-quick-category]'));
   const totalCount = document.querySelector('#eventsTotalCount');
   const eventsGrid = document.querySelector('[data-events-grid]');
+
+  const updateFilterOptionLabels = () => {
+    if (categoryFilter) {
+      Array.from(categoryFilter.options).forEach((option) => {
+        if (!option.value || option.value === 'all') return;
+        option.textContent = getMetaLabel('categories', option.value);
+      });
+    }
+
+    if (locationFilter) {
+      Array.from(locationFilter.options).forEach((option) => {
+        if (!option.value || option.value === 'all') return;
+        option.textContent = getMetaLabel('locations', option.value);
+      });
+    }
+  };
+
+  updateFilterOptionLabels();
+
+  const datasetEvents = getProjectEvents();
+  let cards = Array.from(document.querySelectorAll('[data-event-card]'));
+
+  if (cards.length === 0 && eventsGrid && datasetEvents.length > 0) {
+    renderEventsGridFromDataset(eventsGrid, datasetEvents);
+    cards = Array.from(eventsGrid.querySelectorAll('[data-event-card]'));
+  }
+
+  if (cards.length === 0) return;
 
   if (totalCount) {
     totalCount.textContent = String(cards.length);
@@ -1107,6 +1408,17 @@ function initEventsFiltering() {
   };
 
   window.refreshEventFilters = updateEvents;
+
+  window.refreshEventsListingLanguage = () => {
+    updateFilterOptionLabels();
+    const events = getProjectEvents();
+    cards.forEach((card) => {
+      const eventId = card.dataset.eventId;
+      const event = events.find((item) => item.id === eventId);
+      if (event) updateEventCardFromDataset(card, event);
+    });
+    updateEvents();
+  };
   applyStoredFilters(getStoredEventFilters());
 
   [categoryFilter, dateFilter, locationFilter].forEach((filter) => {
@@ -1300,4 +1612,138 @@ function initContactFormValidation() {
       });
     }
   });
+}
+
+
+function initHomeEvents() {
+  const container = document.querySelector('[data-latest-events]');
+  if (!container) return;
+
+  const events = window.VUEG_EVENTS || [];
+  if (!events.length) return;
+
+  const latest = events.slice(3, 6); // you can sort later if needed
+
+  container.innerHTML = latest.map(event => {
+    const text = getLocalizedEventText(event);
+    const category = getMetaLabel('categories', event.category);
+
+    return `
+      <div class="col-md-6 col-xl-4">
+        <article class="event-card h-100">
+          <img 
+            src="${escapeHtml(event.image)}" 
+            class="event-card-img"
+            alt="${escapeHtml(text.title)}"
+            loading="lazy"
+          >
+
+          <div class="event-card-body">
+            <div class="d-flex justify-content-between align-items-start gap-3">
+              <span class="badge rounded-pill ${getCategoryBadgeClass(event.category)}">
+                ${escapeHtml(category)}
+              </span>
+              <span class="event-date">
+                ${escapeHtml(formatEventDateShort(event.date))}
+              </span>
+            </div>
+
+            <h3>${escapeHtml(text.title)}</h3>
+            <p>${escapeHtml(text.description)}</p>
+
+            <div class="event-meta-list compact">
+              <span>${escapeHtml(getMetaLabel('locations', event.location))}</span>
+              <span>${escapeHtml(event.time)}</span>
+            </div>
+
+            <a 
+              class="stretched-link card-link" 
+              href="event.html?id=${encodeURIComponent(event.id)}">
+              ${escapeHtml(getViewDetailsLabel())}
+            </a>
+          </div>
+        </article>
+      </div>
+    `;
+  }).join('');
+}
+
+function initFeaturedSliderDynamic() {
+  const track = document.querySelector('[data-featured-track]');
+  if (!track) return;
+
+  const events = window.VUEG_EVENTS || [];
+  if (!events.length) return;
+
+  const featured = events.filter(e => e.featured);
+  if (!featured.length) return;
+
+  track.innerHTML = featured.map((event, index) => {
+    const text = getLocalizedEventText(event);
+    const category = getMetaLabel('categories', event.category);
+    const location = getMetaLabel('locations', event.location);
+
+    return `
+      <article class="featured-slide ${index === 0 ? 'is-active' : ''}" data-featured-slide>
+        <div class="row g-0 align-items-stretch">
+          
+          <div class="col-lg-5">
+            <div class="featured-visual">
+              <img 
+                src="${escapeHtml(event.image)}" 
+                alt="${escapeHtml(text.title)}"
+                class="w-100 h-100 object-fit-cover"
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="featured-content">
+              <span class="badge rounded-pill ${getCategoryBadgeClass(event.category)}">
+                ${escapeHtml(category)}
+              </span>
+
+              <h3>${escapeHtml(text.title)}</h3>
+              <p>${escapeHtml(text.description)}</p>
+
+              <div class="event-meta-list">
+                <span>${escapeHtml(formatEventDateLong(event.date))}</span>
+                <span>${escapeHtml(event.time)}</span>
+                <span>${escapeHtml(location)}</span>
+              </div>
+
+              <a class="btn btn-primary" href="event.html?id=${encodeURIComponent(event.id)}">
+                ${escapeHtml(getViewDetailsLabel())}
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  // ✅ Build dots dynamically
+  const dotsContainer = document.querySelector('.slider-dots');
+  if (dotsContainer) {
+    dotsContainer.innerHTML = featured.map((_, index) => `
+      <button 
+        class="slider-dot ${index === 0 ? 'is-active' : ''}" 
+        type="button" 
+        data-slider-dot="${index}">
+      </button>
+    `).join('');
+  }
+}
+
+function updateLogoByTheme(theme) {
+  const logo = document.querySelector('[data-site-logo]');
+  if (!logo) return;
+
+  if (theme === 'dark') {
+    logo.src = 'assets/img/logo_dark.png';
+  } else {
+    logo.src = 'assets/img/logo_light.png';
+  }
 }

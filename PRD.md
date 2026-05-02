@@ -1,4 +1,5 @@
 # Product Requirements Document (PRD)
+
 ## Virtual University Events Guide Website
 
 ---
@@ -6,9 +7,11 @@
 ## 1. Overview
 
 ### 1.1 Purpose
+
 Build a responsive multi-page website that displays university events using front-end technologies only (HTML, CSS, JavaScript, Bootstrap).
 
 ### 1.2 Goals
+
 - Display events in a clear and attractive way
 - Provide easy navigation between pages
 - Add basic interactivity (slider, filtering, validation)
@@ -20,11 +23,13 @@ Build a responsive multi-page website that displays university events using fron
 ## 2. Technology Stack
 
 ### 2.1 Core Technologies
+
 - HTML5 (structure)
 - CSS3 (styling)
 - JavaScript (interactivity)
 
 ### 2.2 Framework
+
 - Bootstrap (via CDN)
 
 ---
@@ -32,6 +37,7 @@ Build a responsive multi-page website that displays university events using fron
 ## 3. Website Structure
 
 ### Pages:
+
 - `index.html` (Home)
 - `events.html` (All Events)
 - `event.html` (Event Details)
@@ -43,11 +49,13 @@ Build a responsive multi-page website that displays university events using fron
 ## 4. Global Layout Requirements
 
 Each page must include:
+
 - Header (Logo + Navbar)
 - Main content
 - Footer (contact info + copyright)
 
 Navigation:
+
 - Fully functional links between all pages
 - Responsive Navbar (Bootstrap)
 
@@ -60,6 +68,7 @@ Navigation:
 ### 5.1 Home Page (`index.html`)
 
 #### Sections:
+
 - Header (Logo + Navbar)
 - Featured Events section
   - Slider OR horizontal cards (JavaScript)
@@ -70,6 +79,7 @@ Navigation:
 - Footer
 
 #### Features:
+
 - Event slider (JavaScript)
 - Responsive layout using Bootstrap Grid / Flexbox
 
@@ -78,6 +88,7 @@ Navigation:
 ### 5.2 Events Page (`events.html`)
 
 #### Features:
+
 - Display events as Cards:
   - Image
   - Title
@@ -99,6 +110,7 @@ Navigation:
 ### 5.3 Event Details Page (`event.html`)
 
 #### Content:
+
 - Event title
 - Date & time
 - Location
@@ -107,6 +119,7 @@ Navigation:
 - Image gallery
 
 #### Features:
+
 - "Add to Calendar" button (UI only)
 - "Share" button (UI only)
 - Related Events section (cards or links)
@@ -116,6 +129,7 @@ Navigation:
 ### 5.4 About Page (`about.html`)
 
 #### Content:
+
 - Platform description
 - Vision and mission
 - Team section:
@@ -130,11 +144,13 @@ Navigation:
 ### 5.5 Contact Page (`contact.html`)
 
 #### Form Fields:
+
 - Name
 - Email
 - Message
 
 #### Features:
+
 - JavaScript validation:
   - Required fields
   - Email format validation
@@ -171,6 +187,7 @@ Navigation:
 ## 8. Bootstrap Requirements
 
 Must use:
+
 - Grid system (layout)
 - Navbar
 - Cards
@@ -180,6 +197,7 @@ Must use:
 - Alerts
 
 Optional:
+
 - Modal
 
 ---
@@ -204,14 +222,17 @@ contact.html
 ## 10. Multi-Language Support
 
 ### Supported Languages:
+
 - Arabic (RTL)
 - English (LTR)
 
 ### Features:
+
 - Language toggle button (AR / EN)
 - Dynamic content switching using JavaScript
 
 ### Requirements:
+
 - Proper RTL layout for Arabic
 - Font compatibility
 - Text managed via JSON or JavaScript object
